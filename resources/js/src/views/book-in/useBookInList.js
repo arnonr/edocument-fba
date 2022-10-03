@@ -228,31 +228,31 @@ export default function useBookInList() {
                     return book;
                 });
 
-                if(showBtnAdmin == true){
+                // if(showBtnAdmin == true){
 
-                }else if(getUserData().userID == 6){ // คุณชัชชญา
+                // }else if(getUserData().userID == 6){ // คุณชัชชญา
 
-                }else if(getUserData().userID == 5){ // คุณเจษฎาภรณ์
-                    bookInLists.value = bookInLists.value.filter((x) => {
-                        if (x.departmentTo != null) {
-                            return (
-                                x.departmentTo == getUserData().department.id || x.departmentTo == 5
-                            );
-                        } else {
-                            return true;
-                        }
-                    });
-                }else{
-                    bookInLists.value = bookInLists.value.filter((x) => {
-                        if (x.departmentTo != null) {
-                            return (
-                                x.departmentTo == getUserData().department.id
-                            );
-                        } else {
-                            return true;
-                        }
-                    });
-                }
+                // }else if(getUserData().userID == 5){ // คุณเจษฎาภรณ์
+                //     bookInLists.value = bookInLists.value.filter((x) => {
+                //         if (x.departmentTo != null) {
+                //             // return (
+                //             //     x.departmentTo == getUserData().department.id || x.departmentTo == 5
+                //             // );
+                //         } else {
+                //             return true;
+                //         }
+                //     });
+                // }else{
+                //     bookInLists.value = bookInLists.value.filter((x) => {
+                //         // if (x.departmentTo != null) {
+                //         //     return (
+                //         //         x.departmentTo == getUserData().department.id
+                //         //     );
+                //         // } else {
+                //         //     return true;
+                //         // }
+                //     });
+                // }
 
                 items.value = bookInLists.value;
                 totalRows.value = bookInLists.value.length;
