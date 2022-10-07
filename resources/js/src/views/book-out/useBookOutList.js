@@ -681,12 +681,14 @@ export default function useBookOutList() {
                     bookTypeNameCheck = true;
                 }
 
+                
                 const bookNoCheck =
                     advancedSearch.bookNo != ""
                         ? x.bookNo.includes(advancedSearch.bookNo)
                         : true;
 
                 let dateSendCheck = true;
+
                 if (advancedSearch.dateSend != "") {
                     dateSendCheck = dayjs(x.dateSendReal).isSame(
                         dayjs(advancedSearch.dateSend)
@@ -708,21 +710,21 @@ export default function useBookOutList() {
                         ? x.fullName.includes(advancedSearch.fullName)
                         : true;
 
-                let departmentNameCheck = true;
-                if (
-                    advancedSearch.departmentName.code != "" &&
-                    advancedSearch.departmentName.code != null
-                ) {
-                    if (x.departmentName == null) {
-                        departmentNameCheck = false;
-                    } else {
-                        departmentNameCheck = x.departmentName.includes(
-                            advancedSearch.departmentName.title
-                        );
-                    }
-                } else {
-                    departmentNameCheck = true;
-                }
+                // let departmentNameCheck = true;
+                // if (
+                //     advancedSearch.departmentName.code != "" &&
+                //     advancedSearch.departmentName.code != null
+                // ) {
+                //     if (x.departmentName == null) {
+                //         departmentNameCheck = false;
+                //     } else {
+                //         departmentNameCheck = x.departmentName.includes(
+                //             advancedSearch.departmentName.title
+                //         );
+                //     }
+                // } else {
+                //     departmentNameCheck = true;
+                // }
 
                 let dateReceiveCheck = true;
                 if (advancedSearch.dateReceive != "") {
@@ -764,11 +766,10 @@ export default function useBookOutList() {
                     toSendCheck &&
                     titleCheck &&
                     fullNameCheck &&
-                    departmentNameCheck &&
                     dateReceiveCheck &&
                     dateReturnCheck &&
                     statusNameCheck
-                    // && favoriteCheck
+                    // favoriteCheck
                 );
             });
 
