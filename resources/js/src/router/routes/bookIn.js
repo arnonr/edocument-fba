@@ -36,7 +36,7 @@ export default [
     component: () => import("@/views/book-in/old/BookInOld.vue"),
     meta: {
       pageTitle: "ดูเอกสารย้อนหลัง",
-      resource: "AdminUser",
+      resource: "User",
       action: "manage",
     },
   },
@@ -46,7 +46,7 @@ export default [
     component: () => import("@/views/book-in/old/add/BookInOldAdd.vue"),
     meta: {
       pageTitle: "เพิ่มเอกสารย้อนหลัง",
-      resource: "AdminUser",
+      resource: "User",
       action: "manage",
     },
   },

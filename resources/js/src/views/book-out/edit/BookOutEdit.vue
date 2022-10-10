@@ -315,7 +315,7 @@
               </b-form-group>
             </b-col>
 
-            <b-col cols="12" >
+            <!-- <b-col cols="12" >
               <b-form-group
                 label="ต้องการส่งเมลอีกครั้งใช่หรือไม่?"
                 label-for="h-detail"
@@ -325,7 +325,7 @@
                     ใช่
                 </b-form-checkbox>
               </b-form-group>
-            </b-col>
+            </b-col> -->
 
             <!-- submit and reset -->
             <b-col offset-md="4">

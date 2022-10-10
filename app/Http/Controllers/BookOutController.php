@@ -390,9 +390,10 @@ class BookOutController extends Controller
             ไฟล์ฉบับสมบูรณ์: <a href="'.env('APP_URL').'/storage/'.$data->file_success.'">เปิดไฟล์</a>'
             
         ];
-
+        
         try {
-            \Mail::to($email)->send(new \App\Mail\MyMail($details, $data->title, $template));
+            // \Mail::to($email)->send(new \App\Mail\MyMail($details, $data->title, $template));
+            \Mail::to('arnon.r@tgde.kmutnb.ac.th')->send(new \App\Mail\MyMail($details, $data->title, $template, $data->file_success));
         } catch (Throwable $e) {
             $sendmail = false;
         }
@@ -512,16 +513,17 @@ class BookOutController extends Controller
         $bookType->save();
 
         // Sendmail
-        if($isSendEmail == 'true'){
-            if($bookTo != 'null'){
-                foreach(json_decode($bookTo, true) as $key => $value){
-                    $this->sendMail($value['email'], $data);
-                }
-            }
-        }   
+        // if($isSendEmail == 'true'){
+        //     if($bookTo != 'null'){
+        //         foreach(json_decode($bookTo, true) as $key => $value){
+        //             $this->sendMail($value['email'], $data);
+        //         }
+        //     }
+        // }   
 
         if($sendMailToUser == true){
             $user = User::where('id', $data->user_id)->first();
+           
             $this->sendMailToUser($user->email, $data);
         }
 
