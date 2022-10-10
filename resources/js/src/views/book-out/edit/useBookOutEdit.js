@@ -303,6 +303,7 @@ export default function useBookOutEdit() {
             fileSuccess: bookOutData.fileSuccess,
             statusID: bookOutData.bookStatus.code,
             isSendEmail: bookOutData.isSendEmail,
+            updatedBy: getUserData().userID
         };
 
         store

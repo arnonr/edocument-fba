@@ -25,7 +25,7 @@ export default [
         component: () => import("@/views/book-out/edit/BookOutEdit.vue"),
         meta: {
             pageTitle: "แก้ไขเอกสารออกเลข",
-            resource: "AdminUser",
+            resource: "User",
             action: "manage",
         },
     },
@@ -45,7 +45,7 @@ export default [
         component: () => import("@/views/book-out/old/add/BookOutOldAdd.vue"),
         meta: {
             pageTitle: "เพิ่มเอกสารย้อนหลัง",
-            resource: "AdminUser",
+            resource: "User",
             action: "manage",
         },
     },
@@ -55,7 +55,7 @@ export default [
         component: () => import("@/views/book-out/old/edit/BookOutOldEdit.vue"),
         meta: {
             pageTitle: "แก้ไขเอกสารย้อนหลัง",
-            resource: "AdminUser",
+            resource: "User",
             action: "manage",
         },
     },

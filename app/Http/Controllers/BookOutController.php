@@ -95,7 +95,9 @@ class BookOutController extends Controller
             'date_receive as dateReceive',
             'date_return as dateReturn',
             'book_out.created_at as createdAt',
+            'book_out.created_by as createdBy',
             'book_out.updated_at as updatedAt',
+            'book_out.updated_by as updatedBy',
             'book_out.active as active',
             'users.firstname as firstname',
             'users.lastname as lastname',
@@ -109,7 +111,7 @@ class BookOutController extends Controller
         ->leftJoin('users','book_out.user_id','=','users.id')
         ->leftJoin('book_status','book_out.status_id','=','book_status.id')
         ->leftJoin('book_out_favorite','book_out.id','=','book_out_favorite.book_id')
-        ->orderBy('date_send','desc')
+        ->orderBy('book_no','desc')
         ->orderBy('id','desc')
         ->get();
         
@@ -207,6 +209,7 @@ class BookOutController extends Controller
         $dateReturn = $request->dateReturn;
         $bookTo = $request->bookTo;
         $statusID = $request->statusID;
+        $createdBy = $request->createdBy;
 
         // Check Book No.
         $bookOut = BookOut::where('active', 1)
@@ -270,6 +273,7 @@ class BookOutController extends Controller
         $data->date_send = $dateSend;
         $data->book_year_id = $bookType->year;
         $data->book_page_count = $bookPageCount;
+        $data->created_by = $createdBy;
         // $data->date_receive = $dateReceive;
         // $data->date_return = $dateReturn;
         $data->save();
@@ -430,6 +434,7 @@ class BookOutController extends Controller
         $bookTo = $request->bookTo;
         $statusID = $request->statusID;
         $isSendEmail = $request->isSendEmail;
+        $updatedBy = $request->updatedBy;
 
         // Check Book No.
         $bookOut = BookOut::where('active', 1)
@@ -495,6 +500,7 @@ class BookOutController extends Controller
         $data->file_success = $pathSuccess;
         $data->detail = $detail;
         $data->date_send = $dateSend;
+        $data->updated_by = $updatedBy;
         // $data->book_year_id = $bookType->year;
         // $data->date_receive = $dateReceive;
         // $data->date_return = $dateReturn;

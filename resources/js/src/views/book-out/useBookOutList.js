@@ -311,7 +311,12 @@ export default function useBookOutList() {
                 } else {
                 }
 
+
+                
+
                 items.value = bookOutLists.value;
+
+                console.log(items.value)
                 totalRows.value = bookOutLists.value.length;
             })
             .catch(() => {
@@ -838,6 +843,6 @@ export default function useBookOutList() {
         onChangeStatus,
         exportDate,
         onExportExcel,
-        statusCount
+        statusCount,
     };
 }

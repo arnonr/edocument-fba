@@ -415,20 +415,11 @@
                                         <hr />
                                     </b-col>
 
-                                    <b-col md="6" class="mb-1">
+                                    <b-col md="4" class="mb-1">
                                         <span class="font-weight-bolder"
                                             >ผู้รับผิดชอบ :</span
                                         >
                                         <span>{{ row.item.fullName }}</span>
-                                    </b-col>
-
-                                    <b-col md="6" class="mb-1">
-                                        <span class="font-weight-bolder"
-                                            >ฝ่ายที่เกี่ยวข้อง :</span
-                                        >
-                                        <span>{{
-                                            row.item.departmentName
-                                        }}</span>
                                     </b-col>
 
                                     <b-col md="4" class="mb-1">
@@ -461,13 +452,6 @@
                                             >หมายเหตุ :</span
                                         >
                                         <span>{{ row.item.detail }}</span>
-                                    </b-col>
-
-                                    <b-col md="12" class="mb-1">
-                                        <span class="font-weight-bolder"
-                                            >ส่งเมล :</span
-                                        >
-                                        <span>{{ row.item.bookTo }}</span>
                                     </b-col>
                                 </b-row>
                                 <b-button
@@ -598,7 +582,7 @@
                                 />
                             </b-button>
                             <b-button
-                                v-if="showBtnAdmin"
+                                v-if="showBtnAdmin || (row.item.createdBy == userID && row.item.statusID == 1)"
                                 variant="outline-success"
                                 alt="แก้ไข"
                                 title="แก้ไข"

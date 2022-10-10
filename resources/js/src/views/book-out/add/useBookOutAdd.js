@@ -14,12 +14,12 @@ export default function useBookOutAdd() {
     const overLay = ref(false);
 
     const showForAdmin = getUserData().type == "admin" ? true : false;
-
+    
     const bookOutData = reactive({
         bookType: "",
         toSend: "",
         title: "",
-        userID: "",
+        userID: {code: getUserData().userID,title: getUserData().fullName},
         bookNo: "",
         bookStatus: "",
         dateReceive: "",
@@ -246,6 +246,7 @@ export default function useBookOutAdd() {
             fileSuccess: bookOutData.fileSuccess,
             statusID: bookOutData.bookStatus.code,
             bookTo: bookToSend,
+            createdBy: getUserData().userID
         };
 
         store

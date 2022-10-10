@@ -156,6 +156,7 @@
                 >
                   <v-select
                     v-model="bookOutData.userID"
+                    :disabled=true
                     :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
                     label="title"
                     placeholder="-- เลือกผู้รับผิดชอบ --"
